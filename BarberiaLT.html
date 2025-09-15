@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guía de Estilos — Barbería La Tradición</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR (misma lógica: toggle + aria-expanded + .hidden) -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Barbería La Tradición
+      </a>
+
+      <button id="nav-toggle"
+              class="nav-toggle"
+              aria-label="Abrir menú"
+              aria-expanded="false"
+              aria-controls="site-nav">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav hidden" aria-label="Principal">
+        <a href="#paleta">Paleta</a>
+        <a href="#tipografia">Tipografía</a>
+        <a href="#botones">Botones</a>
+        <a href="#formularios">Formularios</a>
+        <a href="#navbar">Navbar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container layout">
+    <!-- SIDEBAR (índice) -->
+    <aside class="sidebar" aria-label="Índice de la guía">
+      <ul class="menu">
+        <li class="menu__title">Basic Elements</li>
+        <li><a href="#botones">Buttons</a></li>
+        <li><a href="#formularios">Inputs / Forms</a></li>
+        <li><a href="#links">Links</a></li>
+        <li><a href="#navbar">Navbar</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTENIDO -->
+    <section class="content">
+      <header class="hero">
+        <h1>Guía de Estilos</h1>
+        <p class="muted">Sistema visual base de la landing. CSS personalizado, sin frameworks.</p>
+      </header>
+
+      <!-- Paleta -->
+      <section id="paleta" class="panel">
+        <h2>Paleta de colores</h2>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="chip chip--bg"></div>
+            <small>Fondo — <code>#0e0f11</code></small>
+          </div>
+          <div class="swatch">
+            <div class="chip chip--surface"></div>
+            <small>Superficie — <code>#14161a</code></small>
+          </div>
+          <div class="swatch">
+            <div class="chip chip--brand"></div>
+            <small>Marca — <code>#c9a959</code></small>
+          </div>
+          <div class="swatch">
+            <div class="chip chip--accent"></div>
+            <small>Acento — <code>#e4c77a</code></small>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tipografía -->
+      <section id="tipografia" class="panel">
+        <h2>Tipografía</h2>
+        <div class="type-demo">
+          <h1>H1 — Elegancia Clásica</h1>
+          <h2>H2 — Tradición Moderna</h2>
+          <h3>H3 — Detalle Barbero</h3>
+          <p>Texto base. <a class="link" href="#links">Enlace de ejemplo</a></p>
+        </div>
+      </section>
+
+      <!-- Botones -->
+      <section id="botones" class="panel">
+        <div class="panel__head">
+          <h2>Buttons</h2>
+          <button class="copy" data-copy="#code-buttons">Copy</button>
+        </div>
+
+        <div class="demo-row">
+          <button class="btn btn--primary">Primario</button>
+          <button class="btn btn--secondary">Secundario</button>
+          <button class="btn btn--outline">Outline</button>
+          <button class="btn btn--ghost">Ghost</button>
+          <button class="btn btn--primary" disabled>Disabled</button>
+        </div>
+
+        <h3>Hover Animation</h3>
+        <div class="demo-row">
+          <button class="btn btn--primary anim-x">Hover Me</button>
+          <button class="btn btn--secondary anim-y">Hover Me</button>
+          <button class="btn btn--outline anim-scale">Hover Me</button>
+        </div>
+
+<h3 class="code-title">Código utilizado</h3>
+<pre id="code-buttons"><code>&lt;button class="btn btn--primary"&gt;Primario&lt;/button&gt;
+&lt;button class="btn btn--secondary"&gt;Secundario&lt;/button&gt;
+&lt;button class="btn btn--outline"&gt;Outline&lt;/button&gt;
+&lt;button class="btn btn--ghost"&gt;Ghost&lt;/button&gt;
+&lt;button class="btn btn--primary" disabled&gt;Disabled&lt;/button&gt;
+
+&lt;!-- Animaciones hover --&gt;
+&lt;button class="btn btn--primary anim-x"&gt;Hover Me&lt;/button&gt;
+&lt;button class="btn btn--secondary anim-y"&gt;Hover Me&lt;/button&gt;
+&lt;button class="btn btn--outline anim-scale"&gt;Hover Me&lt;/button&gt;</code></pre>
+      </section>
+
+      <!-- Links -->
+      <section id="links" class="panel">
+        <div class="panel__head">
+          <h2>Links</h2>
+          <button class="copy" data-copy="#code-links">Copy</button>
+        </div>
+        <p>
+          <a class="link" href="#">Link normal</a> ·
+          <a class="link" href="#" onclick="return false;">Link visitado</a>
+        </p>
+<h3 class="code-title">Código utilizado</h3>
+<pre id="code-links"><code>&lt;a class="link" href="#"&gt;Link normal&lt;/a&gt;</code></pre>
+      </section>
+
+      <!-- Formularios -->
+      <section id="formularios" class="panel">
+        <div class="panel__head">
+          <h2>Inputs y Formularios</h2>
+          <button class="copy" data-copy="#code-forms">Copy</button>
+        </div>
+
+        <form id="demo-form" class="form-grid" action="#" method="post">
+          <label class="field">
+            <span class="field__label">Nombre</span>
+            <input class="control" type="text" placeholder="Tu nombre" required />
+            <small class="hint">Requerido</small>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Email</span>
+            <input class="control" type="email" placeholder="tu@correo.com" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Mensaje</span>
+            <textarea class="control" rows="3" placeholder="¿Cómo podemos ayudarte?"></textarea>
+          </label>
+
+          <div class="actions">
+            <button class="btn btn--primary" type="submit">Enviar</button>
+            <button class="btn btn--outline" type="reset">Limpiar</button>
+          </div>
+        </form>
+
+<h3 class="code-title">Código utilizado</h3>
+<pre id="code-forms"><code>&lt;label class="field"&gt;
+  &lt;span class="field__label"&gt;Email&lt;/span&gt;
+  &lt;input class="control" type="email" placeholder="tu@correo.com" required /&gt;
+&lt;/label&gt;</code></pre>
+      </section>
+
+      <!-- Navbar (código de referencia) -->
+      <section id="navbar" class="panel">
+        <div class="panel__head">
+          <h2>Navbar</h2>
+          <button class="copy" data-copy="#code-navbar">Copy</button>
+        </div>
+<h3 class="code-title">Código utilizado</h3>
+<pre id="code-navbar"><code>&lt;header class="site-header"&gt;
+  &lt;div class="container nav-wrap"&gt;
+    &lt;a class="brand" href="#"&gt;Barbería La Tradición&lt;/a&gt;
+    &lt;button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav"&gt;…&lt;/button&gt;
+    &lt;nav id="site-nav" class="site-nav hidden"&gt;…&lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="yy"></span> Barbería La Tradición</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
