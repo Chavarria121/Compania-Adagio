@@ -1,52 +1,74 @@
-// Lógica alineada a tu zip:
-// - Toggle del menú: aria-expanded + clase .hidden
-// - Sincronización en resize (mostrar menú si vuelve a desktop)
-// - Botón Copy por bloque
+// Ripple effect for buttons
 document.addEventListener("DOMContentLoaded", () => {
-  const navToggle = document.getElementById("nav-toggle");
-  const siteNav   = document.getElementById("site-nav");
-  const yearOut   = document.getElementById("yy");
+  const rippleButtons = document.querySelectorAll(".ripple")
 
-  // Año dinámico en footer (como en tu landing)
-  if (yearOut) yearOut.textContent = new Date().getFullYear();
+  rippleButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      const ripple = document.createElement("span")
+      const rect = this.getBoundingClientRect()
+      const size = Math.max(rect.width, rect.height)
+      const x = e.clientX - rect.left - size / 2
+      const y = e.clientY - rect.top - size / 2
 
-  // Toggle navbar
-  if (navToggle && siteNav) {
-    navToggle.addEventListener("click", () => {
-      const expanded = navToggle.getAttribute("aria-expanded") === "true";
-      navToggle.setAttribute("aria-expanded", String(!expanded));
-      siteNav.classList.toggle("hidden");
-    });
+      ripple.style.width = ripple.style.height = size + "px"
+      ripple.style.left = x + "px"
+      ripple.style.top = y + "px"
+      ripple.classList.add("ripple-effect")
 
-    // Sincroniza estado al redimensionar (si pasa a desktop, asegúrate de mostrar el nav)
-    window.addEventListener("resize", () => {
-      const isDesktop = window.innerWidth > 860;
-      if (isDesktop) {
-        siteNav.classList.remove("hidden");
-        navToggle.setAttribute("aria-expanded", "true");
-      } else {
-        siteNav.classList.add("hidden");
-        navToggle.setAttribute("aria-expanded", "false");
+      this.appendChild(ripple)
+
+      setTimeout(() => {
+        ripple.remove()
+      }, 600)
+    })
+  })
+})
+
+// Smooth scrolling for navigation links
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]')
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault()
+      const targetId = this.getAttribute("href")
+      const targetElement = document.querySelector(targetId)
+
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        })
       }
-    });
+    })
+  })
+})
+
+// Add active state to navigation links based on scroll position
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".guide-section")
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]')
+
+  function updateActiveLink() {
+    let current = ""
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100
+      const sectionHeight = section.offsetHeight
+
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id")
+      }
+    })
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active")
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active")
+      }
+    })
   }
 
-  // Botones Copy
-  document.querySelectorAll(".copy").forEach(btn => {
-    btn.addEventListener("click", async () => {
-      const selector = btn.getAttribute("data-copy");
-      const pre = document.querySelector(selector);
-      if (!pre) return;
-      const text = pre.innerText;
-
-      try {
-        await navigator.clipboard.writeText(text);
-        const prev = btn.textContent;
-        btn.textContent = "Copied!";
-        setTimeout(() => (btn.textContent = prev), 1200);
-      } catch (err) {
-        console.warn("Clipboard no disponible. Usa Ctrl+C.", err);
-      }
-    });
-  });
-});
+  window.addEventListener("scroll", updateActiveLink)
+  updateActiveLink() // Call once on load
+})
