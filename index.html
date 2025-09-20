@@ -1,207 +1,669 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Guía de Estilos — Compañia Adagio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Estilos - Adagio 3.0</title>
+  <meta name="description" content="Sistema de diseño completo para Compañía Adagio 3.0">
+  
+  <!-- Fonts de Adagio 3.0 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Títulos -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Abril+Fatface&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Subtítulos -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;600;700;800&family=Raleway:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Párrafos -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Acentos -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Pacifico&family=Great+Vibes&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- NAVBAR (misma lógica: toggle + aria-expanded + .hidden) -->
-  <header class="site-header">
-    <div class="container nav-wrap">
+  <!-- Agregando header con navegación igual a Adagio 3.0 -->
+  <header class="header">
+    <div class="container nav">
       <a class="brand" href="#">
-        <span class="brand-mark" aria-hidden="true"></span>
-        Compañia Adagio
+        <img class="brand-logo" src="Compañia Adagio 3.0/img/Logo/Round_Adagio .png" alt="Logo Adagio">
+        <span class="brand-text">Guía de Estilos</span>
       </a>
-
-      <button id="nav-toggle"
-              class="nav-toggle"
-              aria-label="Abrir menú"
-              aria-expanded="false"
-              aria-controls="site-nav">
-        <span class="bar" aria-hidden="true"></span>
-        <span class="bar" aria-hidden="true"></span>
-        <span class="bar" aria-hidden="true"></span>
-      </button>
-
-      <nav id="site-nav" class="site-nav hidden" aria-label="Principal">
-        <a href="#paleta">Paleta</a>
-        <a href="#tipografia">Tipografía</a>
-        <a href="#botones">Botones</a>
-        <a href="#formularios">Formularios</a>
-        <a href="#navbar">Navbar</a>
+      <nav class="nav-links">
+        <!-- Updated navigation to match required components only -->
+        <a class="nav-link" href="#colores">Paleta de Colores</a>
+        <a class="nav-link" href="#tipografia">Sistema Tipográfico</a>
+        <a class="nav-link" href="#botones">Botones</a>
+        <a class="nav-link" href="#formularios">Formularios</a>
+        <a class="nav-link" href="#radio-checkboxes">Radio Buttons y Checkboxes</a>
+        <a class="nav-link" href="#enlaces">Enlaces</a>
+        <a class="nav-link" href="#navegacion">Navegación</a>
       </nav>
     </div>
   </header>
 
-  <main class="container layout">
-    <!-- SIDEBAR (índice) -->
-    <aside class="sidebar" aria-label="Índice de la guía">
-      <ul class="menu">
-        <li class="menu__title">Basic Elements</li>
-        <li><a href="#botones">Buttons</a></li>
-        <li><a href="#formularios">Inputs / Forms</a></li>
-        <li><a href="#links">Links</a></li>
-        <li><a href="#navbar">Navbar</a></li>
-      </ul>
-    </aside>
+  <div class="style-guide">
+    <!-- Adding top margin to prevent overlap with fixed header -->
+    <header style="margin-top: 90px;">
+      <h1 class="guide-title">Guía de Estilos - Compañía Adagio</h1>
+      <p style="text-align: center; color: var(--muted); font-size: 1.1rem; margin-bottom: 40px;">
+        Sistema de diseño completo para componentes web básicos
+      </p>
+    </header>
 
-    <!-- CONTENIDO -->
-    <section class="content">
-      <header class="hero">
-        <h1>Guía de Estilos</h1>
-        <p class="muted">Sistema visual base de la landing. CSS personalizado, sin frameworks.</p>
-      </header>
-
-      <!-- Paleta -->
-      <section id="paleta" class="panel">
-        <h2>Paleta de colores</h2>
-        <div class="swatches">
-          <div class="swatch">
-            <div class="chip chip--bg"></div>
-            <small>Fondo — <code>#0e0f11</code></small>
-          </div>
-          <div class="swatch">
-            <div class="chip chip--surface"></div>
-            <small>Superficie — <code>#14161a</code></small>
-          </div>
-          <div class="swatch">
-            <div class="chip chip--brand"></div>
-            <small>Marca — <code>#c9a959</code></small>
-          </div>
-          <div class="swatch">
-            <div class="chip chip--accent"></div>
-            <small>Acento — <code>#e4c77a</code></small>
-          </div>
+    <!-- Paleta de Colores -->
+    <section id="colores" class="guide-section">
+      <h2 class="section-title">Paleta de Colores</h2>
+      <div class="color-palette">
+        <div class="color-item">
+          <div class="color-swatch" style="background: #D4AF37;"></div>
+          <h4 style="margin: 0 0 4px; color: var(--text);">Primary</h4>
+          <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">#D4AF37</p>
+          <p style="margin: 4px 0 0; color: var(--muted); font-size: 0.8rem;">var(--primary)</p>
         </div>
-      </section>
-
-      <!-- Tipografía -->
-      <section id="tipografia" class="panel">
-        <h2>Tipografía</h2>
-        <div class="type-demo">
-          <h1>H1 — Elegancia Clásica</h1>
-          <h2>H2 — Tradición Moderna</h2>
-          <h3>H3 — Detalle Barbero</h3>
-          <p>Texto base. <a class="link" href="#links">Enlace de ejemplo</a></p>
+        <div class="color-item">
+          <div class="color-swatch" style="background: #0f0f10;"></div>
+          <h4 style="margin: 0 0 4px; color: var(--text);">Background</h4>
+          <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">#0f0f10</p>
+          <p style="margin: 4px 0 0; color: var(--muted); font-size: 0.8rem;">var(--bg)</p>
         </div>
-      </section>
-
-      <!-- Botones -->
-      <section id="botones" class="panel">
-        <div class="panel__head">
-          <h2>Buttons</h2>
-          <button class="copy" data-copy="#code-buttons">Copy</button>
+        <div class="color-item">
+          <div class="color-swatch" style="background: #151517;"></div>
+          <h4 style="margin: 0 0 4px; color: var(--text);">Surface</h4>
+          <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">#151517</p>
+          <p style="margin: 4px 0 0; color: var(--muted); font-size: 0.8rem;">var(--surface)</p>
         </div>
-
-        <div class="demo-row">
-          <button class="btn btn--primary">Primario</button>
-          <button class="btn btn--secondary">Secundario</button>
-          <button class="btn btn--outline">Outline</button>
-          <button class="btn btn--ghost">Ghost</button>
-          <button class="btn btn--primary" disabled>Disabled</button>
+        <div class="color-item">
+          <div class="color-swatch" style="background: #f6f6f8;"></div>
+          <h4 style="margin: 0 0 4px; color: var(--text);">Text</h4>
+          <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">#f6f6f8</p>
+          <p style="margin: 4px 0 0; color: var(--muted); font-size: 0.8rem;">var(--text)</p>
         </div>
-
-        <h3>Hover Animation</h3>
-        <div class="demo-row">
-          <button class="btn btn--primary anim-x">Hover Me</button>
-          <button class="btn btn--secondary anim-y">Hover Me</button>
-          <button class="btn btn--outline anim-scale">Hover Me</button>
+        <div class="color-item">
+          <div class="color-swatch" style="background: #9a9aa3;"></div>
+          <h4 style="margin: 0 0 4px; color: var(--text);">Muted</h4>
+          <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">#9a9aa3</p>
+          <p style="margin: 4px 0 0; color: var(--muted); font-size: 0.8rem;">var(--muted)</p>
         </div>
-
-<h3 class="code-title">Código utilizado</h3>
-<pre id="code-buttons"><code>&lt;button class="btn btn--primary"&gt;Primario&lt;/button&gt;
-&lt;button class="btn btn--secondary"&gt;Secundario&lt;/button&gt;
-&lt;button class="btn btn--outline"&gt;Outline&lt;/button&gt;
-&lt;button class="btn btn--ghost"&gt;Ghost&lt;/button&gt;
-&lt;button class="btn btn--primary" disabled&gt;Disabled&lt;/button&gt;
-
-&lt;!-- Animaciones hover --&gt;
-&lt;button class="btn btn--primary anim-x"&gt;Hover Me&lt;/button&gt;
-&lt;button class="btn btn--secondary anim-y"&gt;Hover Me&lt;/button&gt;
-&lt;button class="btn btn--outline anim-scale"&gt;Hover Me&lt;/button&gt;</code></pre>
-      </section>
-
-      <!-- Links -->
-      <section id="links" class="panel">
-        <div class="panel__head">
-          <h2>Links</h2>
-          <button class="copy" data-copy="#code-links">Copy</button>
+        <div class="color-item">
+          <div class="color-swatch" style="background: #242428;"></div>
+          <h4 style="margin: 0 0 4px; color: var(--text);">Outline</h4>
+          <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">#242428</p>
+          <p style="margin: 4px 0 0; color: var(--muted); font-size: 0.8rem;">var(--outline)</p>
         </div>
-        <p>
-          <a class="link" href="#">Link normal</a> ·
-          <a class="link" href="#" onclick="return false;">Link visitado</a>
-        </p>
-<h3 class="code-title">Código utilizado</h3>
-<pre id="code-links"><code>&lt;a class="link" href="#"&gt;Link normal&lt;/a&gt;</code></pre>
-      </section>
-
-      <!-- Formularios -->
-      <section id="formularios" class="panel">
-        <div class="panel__head">
-          <h2>Inputs y Formularios</h2>
-          <button class="copy" data-copy="#code-forms">Copy</button>
-        </div>
-
-        <form id="demo-form" class="form-grid" action="#" method="post">
-          <label class="field">
-            <span class="field__label">Nombre</span>
-            <input class="control" type="text" placeholder="Tu nombre" required />
-            <small class="hint">Requerido</small>
-          </label>
-
-          <label class="field">
-            <span class="field__label">Email</span>
-            <input class="control" type="email" placeholder="tu@correo.com" required />
-          </label>
-
-          <label class="field">
-            <span class="field__label">Mensaje</span>
-            <textarea class="control" rows="3" placeholder="¿Cómo podemos ayudarte?"></textarea>
-          </label>
-
-          <div class="actions">
-            <button class="btn btn--primary" type="submit">Enviar</button>
-            <button class="btn btn--outline" type="reset">Limpiar</button>
-          </div>
-        </form>
-
-<h3 class="code-title">Código utilizado</h3>
-<pre id="code-forms"><code>&lt;label class="field"&gt;
-  &lt;span class="field__label"&gt;Email&lt;/span&gt;
-  &lt;input class="control" type="email" placeholder="tu@correo.com" required /&gt;
-&lt;/label&gt;</code></pre>
-      </section>
-
-      <!-- Navbar (código de referencia) -->
-      <section id="navbar" class="panel">
-        <div class="panel__head">
-          <h2>Navbar</h2>
-          <button class="copy" data-copy="#code-navbar">Copy</button>
-        </div>
-<h3 class="code-title">Código utilizado</h3>
-<pre id="code-navbar"><code>&lt;header class="site-header"&gt;
-  &lt;div class="container nav-wrap"&gt;
-    &lt;a class="brand" href="#"&gt;Barbería La Tradición&lt;/a&gt;
-    &lt;button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav"&gt;…&lt;/button&gt;
-    &lt;nav id="site-nav" class="site-nav hidden"&gt;…&lt;/nav&gt;
-  &lt;/div&gt;
-&lt;/header&gt;</code></pre>
-      </section>
+      </div>
+      
+      <div class="code-block">
+        <div class="code-label">CSS Variables</div>
+        <pre>:root {
+  --bg: #0f0f10;
+  --surface: #151517;
+  --muted: #9a9aa3;
+  --text: #f6f6f8;
+  --primary: #D4AF37;
+  --primary-700: #b39127;
+  --outline: #242428;
+  --shadow: rgba(0,0,0,.35);
+}</pre>
+      </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>&copy; <span id="yy"></span> Compañia Adagio</small>
-    </div>
-  </footer>
+    <!-- Sistema Tipográfico -->
+    <section id="tipografia" class="guide-section">
+      <h2 class="section-title">Sistema Tipográfico</h2>
+      
+      <div class="component-item">
+        <h3 class="component-title">Títulos Principales</h3>
+        <div class="component-demo">
+          <div class="typography-demo">
+            <h1 class="title-display" style="margin: 0;">Título Display</h1>
+          </div>
+          <div class="typography-demo">
+            <h2 class="title-section" style="margin: 0;">Título de Sección</h2>
+          </div>
+        </div>
+        <div class="code-label">HTML</div>
+        <div class="code-block">
+          <pre>&lt;h1 class="title-display"&gt;Título Display&lt;/h1&gt;
+&lt;h2 class="title-section"&gt;Título de Sección&lt;/h2&gt;</pre>
+        </div>
+        <div class="code-label">CSS</div>
+        <div class="code-block">
+          <pre>.title-display {
+  font-family: "Playfair Display", "Abril Fatface", "Cormorant Garamond", serif;
+  font-size: clamp(34px, 5.6vw, 72px);
+  line-height: 1.1;
+}
+
+.title-section {
+  font-family: "Playfair Display", "Cormorant Garamond", serif;
+  font-size: clamp(28px, 3.2vw, 42px);
+}</pre>
+        </div>
+      </div>
+
+      <div class="component-item">
+        <h3 class="component-title">Subtítulos</h3>
+        <div class="component-demo">
+          <div class="typography-demo">
+            <p class="subtitle" style="margin: 0;">Subtítulo regular</p>
+          </div>
+          <div class="typography-demo">
+            <p class="subtitle-strong" style="margin: 0;">Subtítulo fuerte</p>
+          </div>
+        </div>
+        <div class="code-label">HTML</div>
+        <div class="code-block">
+          <pre>&lt;p class="subtitle"&gt;Subtítulo regular&lt;/p&gt;
+&lt;p class="subtitle-strong"&gt;Subtítulo fuerte&lt;/p&gt;</pre>
+        </div>
+        <div class="code-label">CSS</div>
+        <div class="code-block">
+          <pre>.subtitle, .subtitle-strong {
+  font-family: "Montserrat", "Poppins", "Raleway", sans-serif;
+}
+
+.subtitle-strong {
+  font-weight: 800;
+  letter-spacing: .2px;
+}</pre>
+        </div>
+      </div>
+
+      <div class="component-item">
+        <h3 class="component-title">Texto de Acento</h3>
+        <div class="component-demo">
+          <p class="accent-script" style="margin: 0;">Cultura • Salud • Valores</p>
+        </div>
+        <div class="code-label">HTML</div>
+        <div class="code-block">
+          <pre>&lt;p class="accent-script"&gt;Cultura • Salud • Valores&lt;/p&gt;</pre>
+        </div>
+        <div class="code-label">CSS</div>
+        <div class="code-block">
+          <pre>.accent-script {
+  font-family: "Dancing Script", "Pacifico", "Great Vibes", cursive;
+  font-size: clamp(18px, 2.6vw, 28px);
+  color: var(--primary);
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Botones -->
+    <section id="botones" class="guide-section">
+      <h2 class="section-title">Botones</h2>
+      
+      <div class="component-item">
+        <h3 class="component-title">Variantes de Botones</h3>
+        <div class="component-demo">
+          <div class="states-demo">
+            <button class="btn btn-primary ripple">Primario</button>
+            <button class="btn btn-secondary ripple">Secundario</button>
+            <button class="btn btn-outline ripple">Outline</button>
+            <button class="btn btn-primary btn-small ripple">Pequeño</button>
+            <button class="btn btn-primary ripple" disabled>Deshabilitado</button>
+          </div>
+        </div>
+        <div class="code-label">HTML</div>
+        <div class="code-block">
+          <pre>&lt;button class="btn btn-primary ripple"&gt;Primario&lt;/button&gt;
+&lt;button class="btn btn-secondary ripple"&gt;Secundario&lt;/button&gt;
+&lt;button class="btn btn-outline ripple"&gt;Outline&lt;/button&gt;
+&lt;button class="btn btn-primary btn-small ripple"&gt;Pequeño&lt;/button&gt;
+&lt;button class="btn btn-primary ripple" disabled&gt;Deshabilitado&lt;/button&gt;</pre>
+        </div>
+        <div class="code-label">CSS</div>
+        <div class="code-block">
+          <pre>.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--outline);
+  text-decoration: none;
+  color: var(--text);
+  transition: .2s transform, .2s background, .2s border, .2s color, .2s box-shadow;
+  cursor: pointer;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(212,175,55,.2);
+}
+
+.btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #1a1a1a;
+  border-color: transparent;
+}
+
+.btn-primary:hover {
+  background: var(--primary-700);
+}
+
+.btn-outline {
+  background: transparent;
+}
+
+.btn-secondary {
+  background: #1e1f24;
+}
+
+.btn-small {
+  padding: 8px 14px;
+  font-size: .95rem;
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formularios -->
+    <section id="formularios" class="guide-section">
+      <h2 class="section-title">Formularios</h2>
+      
+      <div class="component-item">
+        <h3 class="component-title">Inputs Básicos</h3>
+        <div class="component-demo">
+          <div class="form-demo">
+            <label style="display: grid; gap: 6px; font-weight: 700; font-family: 'Montserrat', sans-serif; margin-bottom: 16px;">
+              <span>Nombre completo *</span>
+              <input type="text" placeholder="Tu nombre" required style="padding: 12px 14px; border-radius: 10px; border: 1px solid var(--outline); background: #0f1013; color: var(--text);">
+            </label>
+            <label style="display: grid; gap: 6px; font-weight: 700; font-family: 'Montserrat', sans-serif; margin-bottom: 16px;">
+              <span>Email *</span>
+              <input type="email" placeholder="correo@ejemplo.com" required style="padding: 12px 14px; border-radius: 10px; border: 1px solid var(--outline); background: #0f1013; color: var(--text);">
+            </label>
+            <label style="display: grid; gap: 6px; font-weight: 700; font-family: 'Montserrat', sans-serif; margin-bottom: 16px;">
+              <span>Servicio de interés</span>
+              <select style="padding: 12px 14px; border-radius: 10px; border: 1px solid var(--outline); background: #0f1013; color: var(--text);">
+                <option>Seleccionar servicio</option>
+                <option>Formación Artística</option>
+                <option>Urban Pulse</option>
+                <option>Alma Latina</option>
+              </select>
+            </label>
+            <label style="display: grid; gap: 6px; font-weight: 700; font-family: 'Montserrat', sans-serif; margin-bottom: 16px;">
+              <span>Mensaje</span>
+              <textarea rows="4" placeholder="Cuéntanos sobre tu interés..." style="padding: 12px 14px; border-radius: 10px; border: 1px solid var(--outline); background: #0f1013; color: var(--text); resize: vertical;"></textarea>
+            </label>
+            <label class="check" style="display: flex; align-items: center; gap: 8px; font-weight: 600; margin-bottom: 20px;">
+              <input type="checkbox" required>
+              <span>Acepto los términos y condiciones *</span>
+            </label>
+            <div style="display: flex; gap: 12px;">
+              <button type="button" class="btn btn-secondary ripple">Cancelar</button>
+              <button type="submit" class="btn btn-primary ripple">Enviar mensaje</button>
+            </div>
+          </div>
+        </div>
+        <div class="code-label">HTML</div>
+        <div class="code-block">
+          <pre>&lt;form class="form" style="max-width: 400px; background: var(--surface); padding: 24px; border-radius: 16px; border: 1px solid var(--outline);"&gt;
+  &lt;h3 style="margin: 0 0 20px; color: var(--primary); font-family: 'Playfair Display', serif;"&gt;Formulario de Contacto&lt;/h3&gt;
+  &lt;label&gt;
+    &lt;span&gt;Nombre completo *&lt;/span&gt;
+    &lt;input type="text" placeholder="Tu nombre" required&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;span&gt;Email *&lt;/span&gt;
+    &lt;input type="email" placeholder="correo@ejemplo.com" required&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;span&gt;Servicio de interés&lt;/span&gt;
+    &lt;select&gt;
+      &lt;option&gt;Seleccionar servicio&lt;/option&gt;
+      &lt;option&gt;Formación Artística&lt;/option&gt;
+      &lt;option&gt;Urban Pulse&lt;/option&gt;
+      &lt;option&gt;Alma Latina&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;span&gt;Mensaje&lt;/span&gt;
+    &lt;textarea rows="4" placeholder="Cuéntanos sobre tu interés..."&gt;&lt;/textarea&gt;
+  &lt;/label&gt;
+  &lt;label class="check"&gt;
+    &lt;input type="checkbox" required&gt;
+    &lt;span&gt;Acepto los términos y condiciones *&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;div&gt;
+    &lt;button type="button" class="btn btn-secondary ripple"&gt;Cancelar&lt;/button&gt;
+    &lt;button type="submit" class="btn btn-primary ripple"&gt;Enviar mensaje&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+        </div>
+        <div class="code-label">CSS</div>
+        <div class="code-block">
+          <pre>.form {
+  max-width: 400px;
+  background: var(--surface);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--outline);
+}
+
+.form h3 {
+  margin: 0 0 20px;
+  color: var(--primary);
+  font-family: "Playfair Display", serif;
+}
+
+.form label {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+  font-family: "Montserrat", "Poppins", sans-serif;
+  margin-bottom: 16px;
+}
+
+.form input, .form select, .form textarea {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--outline);
+  background: #0f1013;
+  color: var(--text);
+}
+
+.form input:focus, .form select:focus, .form textarea:focus {
+  outline: 2px solid var(--primary);
+  box-shadow: 0 0 0 4px rgba(212,175,55,.15);
+}
+
+.form .check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.form .check input {
+  margin-right: 8px;
+}
+
+.form .actions {
+  display: flex;
+  gap: 12px;
+}</pre>
+        </div>
+      </div>
+
+      <div class="component-item">
+        <h3 class="component-title">Radio Buttons y Checkboxes</h3>
+        <div id="radio-checkboxes" class="component-demo">
+          <div class="form-demo">
+            <label style="display: grid; gap: 6px; font-weight: 700; font-family: 'Montserrat', sans-serif; margin-bottom: 16px;">
+              <span>Seleccionar opción</span>
+              <select style="padding: 12px 14px; border-radius: 10px; border: 1px solid var(--outline); background: #0f1013; color: var(--text);">
+                <option>Opción 1</option>
+                <option>Opción 2</option>
+                <option>Opción 3</option>
+              </select>
+            </label>
+            <div style="margin-top: 16px;">
+              <p style="font-weight: 700; margin-bottom: 8px; font-family: 'Montserrat', sans-serif;">Checkboxes:</p>
+              <label class="check" style="display: flex; align-items: center; gap: 8px; font-weight: 600; margin-bottom: 8px;">
+                <input type="checkbox">
+                <span>Checkbox normal</span>
+              </label>
+              <label class="check" style="display: flex; align-items: center; gap: 8px; font-weight: 600; margin-bottom: 8px;">
+                <input type="checkbox" checked>
+                <span>Checkbox seleccionado</span>
+              </label>
+              <label class="check" style="display: flex; align-items: center; gap: 8px; font-weight: 600; margin-bottom: 16px;">
+                <input type="checkbox" disabled>
+                <span>Checkbox deshabilitado</span>
+              </label>
+              
+              <p style="font-weight: 700; margin-bottom: 8px; font-family: 'Montserrat', sans-serif;">Radio Buttons:</p>
+              <label class="check" style="display: flex; align-items: center; gap: 8px; font-weight: 600; margin-bottom: 8px;">
+                <input type="radio" name="radio-demo">
+                <span>Radio opción 1</span>
+              </label>
+              <label class="check" style="display: flex; align-items: center; gap: 8px; font-weight: 600; margin-bottom: 8px;">
+                <input type="radio" name="radio-demo" checked>
+                <span>Radio opción 2 (seleccionado)</span>
+              </label>
+              <label class="check" style="display: flex; align-items: center; gap: 8px; font-weight: 600;">
+                <input type="radio" name="radio-demo" disabled>
+                <span>Radio deshabilitado</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="code-label">HTML</div>
+        <div class="code-block">
+          <pre>&lt;div class="form-demo"&gt;
+  &lt;label&gt;
+    &lt;span&gt;Seleccionar opción&lt;/span&gt;
+    &lt;select&gt;
+      &lt;option&gt;Opción 1&lt;/option&gt;
+      &lt;option&gt;Opción 2&lt;/option&gt;
+      &lt;option&gt;Opción 3&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/label&gt;
+  &lt;div&gt;
+    &lt;p&gt;Checkboxes:&lt;/p&gt;
+    &lt;label class="check"&gt;
+      &lt;input type="checkbox"&gt;
+      &lt;span&gt;Checkbox normal&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="check"&gt;
+      &lt;input type="checkbox" checked&gt;
+      &lt;span&gt;Checkbox seleccionado&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="check"&gt;
+      &lt;input type="checkbox" disabled&gt;
+      &lt;span&gt;Checkbox deshabilitado&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;p&gt;Radio Buttons:&lt;/p&gt;
+    &lt;label class="check"&gt;
+      &lt;input type="radio" name="radio-demo"&gt;
+      &lt;span&gt;Radio opción 1&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="check"&gt;
+      &lt;input type="radio" name="radio-demo" checked&gt;
+      &lt;span&gt;Radio opción 2 (seleccionado)&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="check"&gt;
+      &lt;input type="radio" name="radio-demo" disabled&gt;
+      &lt;span&gt;Radio deshabilitado&lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+        <div class="code-label">CSS</div>
+        <div class="code-block">
+          <pre>.form-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.form-demo label {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+  font-family: "Montserrat", "Poppins", sans-serif;
+  margin-bottom: 16px;
+}
+
+.form-demo select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--outline);
+  background: #0f1013;
+  color: var(--text);
+}
+
+.form-demo .check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-demo .check input {
+  margin-right: 8px;
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enlaces -->
+    <section id="enlaces" class="guide-section">
+      <h2 class="section-title">Enlaces</h2>
+      
+      <div class="component-item">
+        <h3 class="component-title">Estados de Enlaces</h3>
+        <div class="component-demo">
+          <div class="states-demo">
+            <a href="#" class="nav-link">Normal</a>
+            <a href="#" class="nav-link hover">Hover</a>
+            <a href="#" class="nav-link active">Activo</a>
+            <a href="#" class="nav-link visited">Visitado</a>
+          </div>
+        </div>
+        <div class="code-label">HTML</div>
+        <div class="code-block">
+          <pre>&lt;a href="#" class="nav-link"&gt;Normal&lt;/a&gt;
+&lt;a href="#" class="nav-link hover"&gt;Hover&lt;/a&gt;
+&lt;a href="#" class="nav-link active"&gt;Activo&lt;/a&gt;
+&lt;a href="#" class="nav-link visited"&gt;Visitado&lt;/a&gt;</pre>
+        </div>
+        <div class="code-label">CSS</div>
+        <div class="code-block">
+          <pre>.nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: .2s color, .2s transform;
+}
+
+.nav-link:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.nav-link:active,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link:visited {
+  color: var(--muted);
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegación -->
+    <section id="navegacion" class="guide-section">
+      <h2 class="section-title">Barra de Navegación</h2>
+      
+      <div class="component-item">
+        <h3 class="component-title">Header Completo</h3>
+        <div class="component-demo">
+          <header class="header" style="position: relative; background: rgba(15,15,16,.75); backdrop-filter: saturate(140%) blur(8px); border: 1px solid var(--outline); border-radius: 12px;">
+            <div class="container nav" style="height: 70px;">
+              <a class="brand" href="#" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text);">
+                <img class="brand-logo" src="logo.png" alt="Logo Adagio" style="width: 38px; height: 38px; object-fit: cover; border-radius: 8px; border: 1px solid var(--outline);">
+              </a>
+              <nav class="nav-links" style="display: flex; align-items: center; gap: 16px;">
+                <a class="nav-link" href="#" style="color: var(--text); text-decoration: none; font-weight: 600;">Servicios</a>
+                <a class="nav-link" href="#" style="color: var(--text); text-decoration: none; font-weight: 600;">Galería</a>
+                <a class="nav-link" href="#" style="color: var(--text); text-decoration: none; font-weight: 600;">Sobre nosotros</a>
+                <a class="btn btn-primary btn-small ripple" href="#">Contacto</a>
+              </nav>
+            </div>
+          </header>
+        </div>
+        <div class="code-label">HTML</div>
+        <div class="code-block">
+          <pre>&lt;header class="header"&gt;
+  &lt;div class="container nav"&gt;
+    &lt;a class="brand" href="#"&gt;
+      &lt;img class="brand-logo" src="logo.png" alt="Logo Adagio"&gt;
+      &lt;span class="brand-text"&gt;Guía de Estilos&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;nav class="nav-links"&gt;
+      &lt;a class="nav-link" href="#"&gt;Servicios&lt;/a&gt;
+      &lt;a class="nav-link" href="#"&gt;Galería&lt;/a&gt;
+      &lt;a class="nav-link" href="#"&gt;Sobre nosotros&lt;/a&gt;
+      &lt;a class="btn btn-primary btn-small ripple" href="#"&gt;Contacto&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</pre>
+        </div>
+        <div class="code-label">CSS</div>
+        <div class="code-block">
+          <pre>.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(15,15,16,.75);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--outline);
+}
+
+.container.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--outline);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}</pre>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
-
-
